@@ -1,0 +1,17 @@
+[[redirects]]
+  from = "/api/*"       # No redirigir las rutas de la API
+  to = "/api/:splat"    # Permite que las rutas de la API se manejen correctamente
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/assets/*"    # Ruta para archivos estáticos como JS o CSS
+  to = "/assets/:splat" # Evita redirigir estos archivos al index.html
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"           # Redirigir todas las demás rutas
+  to = "/index.html"    # Redirigir solo a index.html para las rutas que no sean de la API o de archivos estáticos
+  status = 200
+  force = true
